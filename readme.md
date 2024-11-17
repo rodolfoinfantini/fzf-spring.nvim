@@ -1,37 +1,47 @@
-# telescope-spring.nvim
+# fzf-spring.nvim
 
->[!NOTE]
-> It hasn't been officially released yet. It's coming soon, so please wait.
+A fzf-lua picker to quickly api endpoint finder in spring(boot) project
 
-A Telescope picker to quickly api endpoint finder in spring(boot) project
+## 🚀 Usage
 
-## 🖥️ Demo
-
-![demo](https://github.com/zerochae/telescope-spring.nvim/assets/84373490/2ec7c4d3-d91d-458d-a42d-06dbbff9d541)
+Available user commands:
+- `:Spring` - Open fzf picker to select the HTTP method to search.
+- `:SpringGet` - Open fzf picker with all GET endpoints.
+- `:SpringPost` - Open fzf picker with all POST endpoints.
+- `:SpringPut` - Open fzf picker with all PUT endpoints.
+- `:SpringDelete` - Open fzf picker with all DELETE endpoints.
+- `:SpringPatch` - Open fzf picker with all PATCH endpoints.
 
 ## ✨ Features
 
-> Search value and method in RequestMapping
+> Select HTTP method to search
 
-![search by request mapping value](https://github.com/zerochae/telescope-spring.nvim/assets/84373490/90bd05c7-87ee-4a4d-a1bc-d7a55f4a9cea)
+![http method](assets/spring.png)
 
-> Search variable value
+> Search endpoints
 
-![Search in variable path](https://github.com/zerochae/telescope-spring.nvim/assets/84373490/3622ea76-096a-4eb4-8e49-c328798fbbb7)
+![search endpoints](assets/get.png)
 
 ## 📦 Installation
 
 ```lua
 -- lazy.nvim
-  {
-    "zerochae/telescope-spring.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim" },
-    config = function()
-      require("spring").setup()
-    end,
-  }
+    {
+        "rodolfoinfantini/fzf-spring.nvim",
+        dependencies = { "ibhagwan/fzf-lua" },
+        config = function()
+            local fzf_spring = require("fzf-spring")
+            fzf_spring.setup()
+            vim.keymap.set("n", "<leader>fs", fzf_spring.pick_spring, { silent = true })
+            -- vim.keymap.set("n", "<leader>fs", fzf_spring.pick_get_mapping, { silent = true })
+            -- vim.keymap.set("n", "<leader>fs", fzf_spring.pick_post_mapping, { silent = true })
+            -- vim.keymap.set("n", "<leader>fs", fzf_spring.pick_put_mapping, { silent = true })
+            -- vim.keymap.set("n", "<leader>fs", fzf_spring.pick_delete_mapping, { silent = true })
+            -- vim.keymap.set("n", "<leader>fs", fzf_spring.pick_patch_mapping, { silent = true })
+        end
+    }
 ```
 
 ## ⚡️ Requirements
 
-- [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+- [fzf-lua](https://github.com/ibhagwan/fzf-lua)
