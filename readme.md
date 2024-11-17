@@ -24,8 +24,8 @@ Available user commands:
 
 ## 📦 Installation
 
+> [lazy.nvim](https://github.com/folke/lazy.nvim)
 ```lua
--- lazy.nvim
     {
         "rodolfoinfantini/fzf-spring.nvim",
         dependencies = { "ibhagwan/fzf-lua" },
@@ -45,3 +45,4 @@ Available user commands:
 ## ⚡️ Requirements
 
 - [fzf-lua](https://github.com/ibhagwan/fzf-lua)
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
