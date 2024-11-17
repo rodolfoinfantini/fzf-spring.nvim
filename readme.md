@@ -1,5 +1,8 @@
 # fzf-spring.nvim
 
+>[!NOTE]
+> This is a modified version of [zerochae/telescope-spring.nvim](https://github.com/zerochae/telescope-spring.nvim)
+
 A fzf-lua picker to quickly api endpoint finder in spring(boot) project
 
 ## 🚀 Usage
