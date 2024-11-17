@@ -16,7 +16,7 @@ function MyPreviewer:parse_entry(entry_str)
 
     local preview = spring_preview_table[endpoint]
     if not preview then
-        return nil
+        return {}
     end
 
     local path = preview.path
