@@ -14,9 +14,14 @@ function MyPreviewer:parse_entry(entry_str)
     local spring_preview_table = U.get_spring_priview_table()
     local endpoint = entry_str
 
-    local path = spring_preview_table[endpoint].path
-    local line_number = spring_preview_table[endpoint].line_number
-    local column = spring_preview_table[endpoint].column
+    local preview = spring_preview_table[endpoint]
+    if not preview then
+        return nil
+    end
+
+    local path = preview.path
+    local line_number = preview.line_number
+    local column = preview.column
 
     return {
         path = path,
